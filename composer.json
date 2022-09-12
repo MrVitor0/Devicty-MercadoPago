@@ -1,0 +1,16 @@
+{
+    "name": "devicty/mercadopago",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Devicty\\Mercadopago\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mrvitor0",
+            "email": "vto.hugo67@gmail.com"
+        }
+    ],
+    "require": {}
+}
