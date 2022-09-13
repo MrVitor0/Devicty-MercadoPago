@@ -1,10 +1,10 @@
 <?php
 
-namespace Devicty\MercadoPago;
+namespace Devicty\MercadoPago\Plans;
 
 use Illuminate\Support\Facades\Http;
 
-class SignatureController extends DevictyMPController
+class SignatureController extends \Devicty\MercadoPago\DevictyMPController
 {
    
     //@setup()

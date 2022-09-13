@@ -1,10 +1,10 @@
 <?php
 
-namespace Devicty\MercadoPago;
+namespace Devicty\MercadoPago\Plans;
 
 use Illuminate\Support\Facades\Http;
 
-class PlansController extends DevictyMPController
+class PlansController extends \Devicty\MercadoPago\DevictyMPController
 {
    
     protected $auto_recurring;

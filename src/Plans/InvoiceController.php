@@ -1,10 +1,10 @@
 <?php
 
-namespace Devicty\MercadoPago;
+namespace Devicty\MercadoPago\Plans;
 
 use Illuminate\Support\Facades\Http;
 
-class InvoiceController extends DevictyMPController
+class InvoiceController extends \Devicty\MercadoPago\DevictyMPController
 {
     protected $search_filters;
 
