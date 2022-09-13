@@ -4,18 +4,18 @@ namespace Devicty\MercadoPago;
 
 use Illuminate\Support\Facades\Http;
 
-class PlansController extends DevictyMPController
+class SignatureController extends DevictyMPController
 {
    
+    //@setup()
     protected $auto_recurring;
     protected $back_url;
-    protected $card_token_id;
-    protected $external_reference;
-    protected $payer_email;
-    protected $preapproval_plan_id;
     protected $reason;
-    protected $status;
+    protected $payment_methods_allowed;
+
+    //@find()
     protected $search_filters;
+
     /**
      * @author Vitor Hugo
      * @version 1.0
@@ -32,12 +32,12 @@ class PlansController extends DevictyMPController
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$this->get_access_token(),
             'Content-Type' => 'application/json',
-        ])->post('https://api.mercadopago.com/preapproval', $data);
+        ])->post('https://api.mercadopago.com/preapproval_plan', $data);
         return $response->json();
     }
 
 
-    /**
+   /**
      * @author Vitor Hugo
      * @version 1.0
      * @access public
@@ -51,7 +51,7 @@ class PlansController extends DevictyMPController
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer '.$this->get_access_token(),
                 'Content-Type' => 'application/json',
-            ])->get("https://api.mercadopago.com/preapproval/$id");
+            ])->get("https://api.mercadopago.com/preapproval_plan/$id");
             return $response->json();
         };
 
@@ -59,7 +59,7 @@ class PlansController extends DevictyMPController
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$this->get_access_token(),
             'Content-Type' => 'application/json',
-        ])->get('https://api.mercadopago.com/preapproval/search', $this->search_filters);
+        ])->get('https://api.mercadopago.com/preapproval_plan/search', $this->search_filters);
         return $response->json();
     }
 
@@ -82,7 +82,7 @@ class PlansController extends DevictyMPController
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$this->get_access_token(),
             'Content-Type' => 'application/json',
-        ])->put("https://api.mercadopago.com/preapproval/$id", $data);
+        ])->put("https://api.mercadopago.com/preapproval_plan/$id", $data);
         return $response->json();
     }
 
