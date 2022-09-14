@@ -12,6 +12,7 @@ class SignatureController extends \Devicty\MercadoPago\DevictyMPController
     protected $back_url;
     protected $reason;
     protected $payment_methods_allowed;
+    protected $external_reference;
 
     //@find()
     protected $search_filters;
